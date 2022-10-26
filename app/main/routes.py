@@ -57,7 +57,6 @@ def checkout():
                                 date_created=form.date_created.data, description=form.description.data, )
             db.session.add(user)
             db.session.commit()
-            session.pop('Shoppingcart')
             flash('Your order has been sent successfully', 'success')
             return redirect(url_for('main.payment'))
         except Exception as e:
